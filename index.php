@@ -94,3 +94,92 @@ function solution($str)
 {
     return strrev($str);
 }
+
+
+/*
+Description:
+Can you find the needle in the haystack?
+
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+After your function finds the needle it should return a message (as a string) that says:
+
+"found the needle at position " plus the index it found the needle, so:
+
+Example(Input --> Output)
+
+["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
+*/
+
+function findNeedle($haystack)
+{
+    for ($i = 0; $i < count($haystack); $i++) {
+        if ($haystack[$i] === "needle") {
+            return "found the needle at position " . $i;
+        }
+    }
+}
+
+/*
+Given an array of integers, return a new array with each value doubled.
+
+For example:
+
+[1, 2, 3] --> [2, 4, 6]
+*/
+
+function maps($x)
+{
+    $result = [];
+    foreach ($x as $value) {
+        $result[] = $value * 2;
+    }
+    return $result;
+}
+
+/*
+Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
+*/
+
+function get_volume_of_cuboid($length, $width, $height)
+{
+    $volume = $length * $width * $height;
+    return $volume;
+}
+
+/*
+Our football team has finished the championship.
+
+Our team's match results are recorded in a collection of strings. Each match is represented by a string in the format "x:y", where x is our team's score and y is our opponents score.
+
+For example: ["3:1", "2:2", "0:1", ...]
+
+Points are awarded for each match as follows:
+
+if x > y: 3 points (win)
+if x < y: 0 points (loss)
+if x = y: 1 point (tie)
+We need to write a function that takes this collection and returns the number of points our team (x) got in the championship by the rules given above.
+
+Notes:
+
+our team always plays 10 matches in the championship
+0 <= x <= 4
+0 <= y <= 4
+*/
+
+function points(array $games): int
+{
+    $total_points = 0;
+    foreach ($games as $game) {
+        list($x, $y) = explode(":", $game);
+        if ($x > $y) {
+            $total_points += 3;
+        } elseif ($x < $y) {
+            $total_points += 0;
+        } else {
+            $total_points += 1;
+        }
+    }
+    return $total_points;
+}
