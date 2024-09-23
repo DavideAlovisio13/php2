@@ -64,13 +64,33 @@ function hero(int $bullets, int $dragons): bool
     }
 }
 
-/*
-It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
-*/
+
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry about strings with less than two characters.
+
 
 function remove_char(string $s): string
 {
     $s = substr($s, 1);
     $s = substr($s, 0, -1);
     return $s;
+}
+
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function remove_exclamation_marks($string)
+{
+    return str_replace('!', '', $string);
+}
+
+
+/*
+Complete the solution so that it reverses the string passed into it.
+
+'world'  =>  'dlrow'
+'word'   =>  'drow'
+*/
+
+function solution($str)
+{
+    return strrev($str);
 }
